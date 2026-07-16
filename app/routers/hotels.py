@@ -21,8 +21,8 @@ def get_hotels(
 
     hotels = [
         {
-            "address": "г. Иркутск бульвар Рябикова, 21а",
-            "name": "Super Атель",
+            "address": "Иркутск, улица 3 Июля, 26",
+            "name": "History 5",
             "starts": 5,
         }
     ]
