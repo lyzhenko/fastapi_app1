@@ -10,7 +10,7 @@ router = APIRouter(
 )
 
 
-@router.get("/hotels", response_model=list[ShemaHotel])
+@router.get("/", response_model=list[ShemaHotel])
 def get_hotels(
     location: str,
     date_from: date,
@@ -29,7 +29,7 @@ def get_hotels(
     return hotels
 
 
-@router.get("/hotels/{hotel_id}", response_model=dict)
+@router.get("/{hotel_id}", response_model=dict)
 def get_hotel_by_id(hotel_id: int, date_from, date_to):
     return {
         "hotel_id": hotel_id,
@@ -40,6 +40,6 @@ def get_hotel_by_id(hotel_id: int, date_from, date_to):
     }
 
 
-@router.post("bookings", response_model=ShemaBooking)
+@router.post("/bookings", response_model=ShemaBooking)
 def add_booking(booking: ShemaBooking):
     pass
