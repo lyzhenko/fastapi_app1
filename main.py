@@ -2,10 +2,12 @@ import uvicorn
 from fastapi import FastAPI
 
 from app.routers import hotels
+from app.routers import bookings
 
 
 app = FastAPI()
 app.include_router(hotels.router)
+app.include_router(bookings.router)
 
 
 if __name__ == "__main__":
