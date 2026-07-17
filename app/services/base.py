@@ -71,6 +71,18 @@ class BaseService:
 
     @classmethod
     async def find_by_id(cls, model_id: int):
+        """
+        Получить запись по ID.
+        
+        Args:
+            model_id: ID записи для поиска.
+        
+        Returns:
+            Найденная запись или None, если запись не существует.
+        
+        Raises:
+            NotImplementedError: Если модель не установлена в подклассе.
+        """
         if cls.model is None:
             raise NotImplementedError("Model class must be set in subclass")
 
