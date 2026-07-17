@@ -14,5 +14,5 @@ async def get_bookings():
 
 
 @router.get("/{booking_id}")
-def get_booking_id(booking_id: int):
-    pass
+async def get_booking_id(booking_id: int):
+    return await BookingService.find_by_id(booking_id)
