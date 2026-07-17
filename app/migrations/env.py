@@ -11,6 +11,11 @@ sys.path.insert(0, dirname(dirname(dirname(abspath(__file__)))))
 
 from app.database import Base  # , DATABASE_URL
 from app.models.hotels import Hotels
+from app.models.users import Users
+from app.models.bookings import Bookings
+from app.models.rooms import Rooms
+
+
 from app.config import settings
 
 # this is the Alembic Config object, which provides
