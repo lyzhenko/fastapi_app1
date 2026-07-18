@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 
 from app.services.bookings import BookingService
+from app.schemas.hotels import ShemaBooking
 
 router = APIRouter(
     prefix="/bookings",
@@ -9,7 +10,7 @@ router = APIRouter(
 
 
 @router.get("/")
-async def get_bookings():
+async def get_bookings() -> list[ShemaBooking]:
     return await BookingService.find_all()
 
 

@@ -19,6 +19,7 @@ class Hotels(Base):
     """
 
     __tablename__ = "hotels"
+
     id: Column = Column(Integer, primary_key=True)
     name: Column = Column(String, nullable=False)
     location: Column = Column(String, nullable=False)
