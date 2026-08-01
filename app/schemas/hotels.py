@@ -1,5 +1,6 @@
-from pydantic import BaseModel
 from datetime import date
+
+from pydantic import BaseModel
 
 
 class ShemaBooking(BaseModel):
@@ -14,6 +15,7 @@ class ShemaBooking(BaseModel):
 
     class Config:
         orm_mode = True
+
 
 class ShemaHotel(BaseModel):
     address: str

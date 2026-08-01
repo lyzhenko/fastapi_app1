@@ -1,6 +1,7 @@
-from sqlalchemy.orm import DeclarativeBase
-from typing import ClassVar, Type, Optional
+from typing import ClassVar
+
 from sqlalchemy import select
+from sqlalchemy.orm import DeclarativeBase
 
 from app.database import async_session_maker
 
@@ -23,7 +24,7 @@ class BaseService:
         hotel = await HotelsService.find_by_id(1)
     """
 
-    model: ClassVar[Optional[Type[DeclarativeBase]]] = None
+    model: ClassVar[type[DeclarativeBase] | None] = None
 
     @classmethod
     async def find_all(cls, **kwargs):

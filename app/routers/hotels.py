@@ -1,6 +1,7 @@
-from typing import Optional
 from datetime import date
+
 from fastapi import APIRouter, Query
+
 from app.schemas.hotels import ShemaBooking, ShemaHotel
 
 router = APIRouter(
@@ -15,8 +16,8 @@ def get_hotels(
     location: str,
     date_from: date,
     date_to: date,
-    stars: Optional[int] = Query(None, ge=1, le=5),
-    has_spa: Optional[bool] = False,
+    stars: int | None = Query(None, ge=1, le=5),
+    has_spa: bool | None = False,
 ):
 
     hotels = [

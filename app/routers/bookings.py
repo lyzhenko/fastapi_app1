@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from app.services.bookings import BookingService
 from app.schemas.hotels import ShemaBooking
+from app.services.bookings import BookingService
 
 router = APIRouter(
     prefix="/bookings",
